@@ -4,9 +4,11 @@ var gRatingCounter = 0;
 
 function onInit() {
     renderBooks();
+
 }
 
 function renderBooks() {
+    renderPageBtns();
     var books = getBooks();
     console.log(books);
     var strHtmls = books.map(function (book) {
@@ -152,4 +154,20 @@ function onBackPage() {
 function onNextPage() {
     nextPage();
     renderBooks();
+}
+
+function onPageNumBtn(pageNum) {
+    setPageByNumBtn(pageNum);
+    renderBooks();
+
+}
+
+function renderPageBtns() {
+    var strHTML = [];
+    var numOfBtns = Math.ceil((gBooks.length / PAGE_SIZE))
+
+    for (var i = 0; i < numOfBtns; i++) {
+        strHTML.push(`<button class="add-book-btn btn" onclick="onPageNumBtn(${i + 1})">${i + 1}</button>`);
+    }
+    document.querySelector('.page-numbers').innerHTML = strHTML.join('');
 }

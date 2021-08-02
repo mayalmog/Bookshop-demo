@@ -121,9 +121,10 @@ function addBookRating(bookId, RatingCounter) {
 }
 
 function nextPage() {
-    gPageIdx++;
-    if (gPageIdx * PAGE_SIZE >= gBooks.length) {
-        gPageIdx = 0;
+    if (gPageIdx >= ((gBooks.length / PAGE_SIZE) - 1)) {
+        return;
+    } else {
+        gPageIdx++;
     }
 }
 
@@ -133,13 +134,13 @@ function backPage() {
     } else {
         gPageIdx--;
     }
-
-    if (gPageIdx * PAGE_SIZE >= gBooks.length) {
-        gPageIdx = 0;
-    }
 }
 
 function getBooksForPage() {
     var startIdx = gPageIdx * PAGE_SIZE;
     return gBooks.slice(startIdx, startIdx + PAGE_SIZE)
+}
+
+function setPageByNumBtn(pageNum) {
+    gPageIdx = pageNum - 1;
 }

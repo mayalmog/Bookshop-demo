@@ -60,7 +60,7 @@ th, td {
 }
 
 .th-title:hover, .th-price:hover {
-    text-shadow: -1px 0 rgb(93, 194, 189), 0 1px rgb(93, 194, 189), 1px 0 rgb(93, 194, 189), 0 -1px rgb(93, 194, 189);
+    text-shadow: -1px 0 rgb(36, 129, 75), 0 1px rgb(36, 129, 75), 1px 0 rgb(36, 129, 75), 0 -1px rgb(36, 129, 75);
 }
 
 .book-img, .modal-img {
@@ -154,4 +154,16 @@ th, td {
     font-size: 20px;
     overflow: hidden;
     border-radius: 1em;
+}
+
+.page-numbers {
+    display: inline-block;
+}
+
+.page-numbers>button {
+    background-color: rgb(250, 241, 230, 0.8);
+    display: inline-block;
+    border-radius: 1em;
+    overflow: hidden;
+    padding: 16px;
 }
